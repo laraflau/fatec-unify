@@ -1,20 +1,55 @@
-*{
+@import "components.css";
+
+/* CSS RESET */
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 16px;
+}
+
+body {
+   font-family: 'Montserrat', Arial, sans-serif;
+   min-height: 100vh;
+   background-color: #a55eea;
+   height: 100%;
+   width: 100%;
 }
 
 header {
-    background-image: url(../img/galaxia.jpg);
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
+    width: 100vw;
+    height: 60px;
+    padding: 30px 20px;
 }
+
+header .main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo > a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.logo img {
+    transform: translateY(-2px);
+    margin-right: 6px;
+}
+
 
 ul{
     float: right;
     list-style-type: none;
-    margin-top: 25px;
+    opacity: 0;
 }
 
 ul li{
@@ -27,17 +62,21 @@ ul li a{
     padding: 5px 20px;
     border: 1px solid transparent;
     transition: 0.6s ease;
+    border-radius: 5px;
+}
+
+ul li.active a {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+ul li + li {
+    margin-left: 10px;
 }
 
 ul li a:hover{
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
     color: black;
 }
-
-/*ul li.active a{
-    background-color: #fff;
-    color: #000;
-}*/
 
 .logo img{
     float: left;
@@ -45,8 +84,66 @@ ul li a:hover{
     height: auto;
 }
 
-.main{
+main{
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
+}
 
+.main-section {
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;    
+}
+
+.main-section .image {
+    padding: 0 60px;
+}
+
+.main-section .image img {
+    width: 100%;
+    max-height: 100%;
+}
+
+.main-section .content {
+    text-align: center;
+    transform: translateY(-30px);
+    padding: 0 20px;
+}
+
+.main-section .content h1 {
+    margin-bottom: 30px;
+}
+
+main h1 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+@media screen and (min-width: 992px) {
+    .main-section {
+        height: calc(100vh - 60px);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .main-section .content {
+        padding: 0 35px;
+    }
+
+    .main-section .image img {
+        width: 500px;
+    }
+
+    main h1 {
+        font-size: 2rem;
+    }
+
+    ul {
+        opacity: 1;
+    }
 }
