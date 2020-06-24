@@ -1,0 +1,56 @@
+@media screen and (min-width: 992px) {
+  .main-section {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .main-section .content {
+    padding: 0 35px;
+  }
+
+  .main-section .image img {
+    width: 500px;
+  }
+
+  main h1 {
+    font-size: 2rem;
+  }
+
+  ul {
+    position: relative;
+    top: 0;
+    max-width: 100%;
+    float: right;
+    list-style-type: none;
+    transform: scaleY(1) !important;
+  }
+
+  ul li {
+    background-color: transparent;
+    display: inline-block;
+  }
+
+  ul li a {
+    color: #fff;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.6s ease;
+    border-radius: 5px;
+  }
+
+  ul li + li {
+    margin-left: 10px;
+  }
+
+  ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+  }
+
+  .menusd {
+    display: none;
+  }
+}
